@@ -36,7 +36,19 @@ namespace OpenDataImport
             }
             */
             //1012
-
+            nodes.ToList()
+                .ForEach(node =>
+                {
+                    OpenData item = new OpenData();
+                    item.編號 = int.Parse(getValue(node, "編號"));
+                    item.攤名 = getValue(node, "攤名");
+                    item.區域 = getValue(node, "區域");
+                    item.電話 = getValue(node, "電話");
+                    item.地址 = getValue(node, "地址");
+                    result.Add(item);
+                });
+            
+                
 
             return result;
         }
