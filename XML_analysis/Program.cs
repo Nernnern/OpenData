@@ -34,6 +34,7 @@ namespace OpenDataImport
                 item.地址 = getValue(node, "地址");
                 result.Add(item);
             }
+
             return result;
         }
         public static string getValue(XElement node, string propertyName)
