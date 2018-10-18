@@ -21,7 +21,7 @@ namespace OpenDataImport
             List<OpenData> result = new List<OpenData>();
             var xml = XElement.Load(@"C:\Users\Chao\Desktop\臺中市百大名攤名產.xml");
             var nodes = xml.Descendants("RECORD").ToList();
-
+            /*
             for (var i = 0; i < nodes.Count; i++)
             {
                 var node = nodes[i];
@@ -34,6 +34,9 @@ namespace OpenDataImport
                 item.地址 = getValue(node, "地址");
                 result.Add(item);
             }
+            */
+            //1012
+
 
             return result;
         }
