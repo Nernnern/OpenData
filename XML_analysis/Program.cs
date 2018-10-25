@@ -3,6 +3,7 @@ using OpenDataImport.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XML_analysis.Repositories;
 
 namespace OpenDataImport
 {
@@ -12,7 +13,15 @@ namespace OpenDataImport
         {
             //Console.WriteLine("Hello World!");
             var nodes = FindOpenData();
-            ShowOpenData(nodes);
+            //ShowOpenData(nodes);
+            dbRespository aa = new dbRespository();
+            var sql_connection = aa.Connection();
+            nodes.ForEach(data=>
+                {
+                aa.Insert_Data(sql_connection, data);
+                });
+            
+
             Console.ReadKey();
         }
 
